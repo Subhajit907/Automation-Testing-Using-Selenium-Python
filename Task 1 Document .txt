@@ -1,0 +1,59 @@
+Code Breakdown:
+
+1.Import Libraries:
+
+time: Used for pausing execution for page loading.
+telnetlib.EC: Not directly used in this code. Potentially a leftover import.
+selenium: Library for browser automation.
+webdriver_manager.chrome: Manages downloading the appropriate Chrome webdriver.
+
+2.Set Up Chrome Driver:
+
+Creates a Chrome service using the downloaded ChromeDriver path.
+Navigate to Login Page:
+
+Opens the Mammoth.io login page for a specific workspace project.
+Pauses for 5 seconds to allow page loading.
+Maximizes the browser window.
+
+3.
+Login:
+
+Finds the username field using XPath and enters the credentials.
+Finds the password field using XPath and enters the password.
+Clicks the login button using XPath.
+Pauses for 5 seconds to allow login processing.
+Navigate to Data View:
+
+Clicks on the desired view name element using XPath.
+Pauses for 5 seconds to allow page loading.
+Open Details Pane:
+
+Finds the element to open the details pane (potentially a specific data point).
+Clicks the element to open the details pane.
+Pauses for 20 seconds to allow the details pane to load fully.
+Switch Window Focus:
+
+Gets the current window handle.
+Gets all open window handles.
+Iterates through all window handles and switches focus to the newly opened window (details pane) if it's different from the login window.
+Extract Data:
+
+Finds the first three data points within the details pane using XPath selectors.
+Extracts the text content of each data point and prints it.
+Close Browser:
+
+Pauses for 10 seconds (optional, for visual verification).
+Quits the Selenium webdriver, closing the browser window.
+
+Note:
+
+This script relies on XPath selectors to locate specific elements on the Mammoth.io website. These selectors may need to be adjusted if the website structure changes.
+The script includes login credentials which should be replaced with your actual Mammoth.io credentials.
+Using the Script:
+
+Save the script as a Python file (e.g., mammoth_data_extract.py).
+Update the XPath selectors if necessary to match the specific data points you want to extract.
+Replace the username and password placeholders with your Mammoth.io credentials.
+Run the script from your terminal: python mammoth_data_extract.py
+This will automate the login process, navigate to the desired data view, open the details pane, and extract the text content of the first three data points.

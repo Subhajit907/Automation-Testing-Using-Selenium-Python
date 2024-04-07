@@ -1,0 +1,52 @@
+Code Breakdown:
+
+Import Libraries:
+
+time: Used for pausing execution for page loading.
+selenium: Library for browser automation.
+webdriver_manager.chrome: Manages downloading the appropriate Chrome webdriver.
+Set Up Chrome Driver:
+
+Creates a Chrome service using the downloaded ChromeDriver path.
+Navigate to Login Page:
+
+Opens the Mammoth.io login page for a specific workspace project.
+Pauses for 5 seconds to allow page loading.
+Maximizes the browser window.
+Login:
+
+Finds the username field using XPath and enters the credentials.
+Finds the password field using XPath and enters the password.
+Clicks the login button using XPath.
+Pauses for 5 seconds to allow login processing.
+Navigate to Data View:
+
+Clicks on the desired view name element using XPath.
+Pauses for 5 seconds to allow page loading.
+Open Details Pane (Optional):
+
+The provided code includes commented-out sections for potentially opening a details pane.
+If your table is within a details pane, uncomment these lines and update the selectors accordingly.
+Count Table Columns:
+
+Defines two XPath selectors to target potential table structures:
+table_xpath1: Targets unordered list elements with class list ng-scope.
+table_xpath2: Targets elements with class value ng-binding ng-scope.
+Finds all matching elements using these selectors.
+Calculates the number of columns for each selector and sums them to get the total column count.
+Prints the total number of columns in the table.
+Close Browser:
+
+Pauses for 10 seconds (optional, for visual verification).
+Quits the Selenium webdriver, closing the browser window.
+Note:
+
+This script relies on XPath selectors to locate elements on the Mammoth.io website. These selectors may need to be adjusted if the website structure changes.
+The script includes login credentials which should be replaced with your actual Mammoth.io credentials.
+The script uses two XPath selectors to capture potential table structures. You may need to modify these selectors based on the specific HTML structure of your target table.
+Using the Script:
+
+Save the script as a Python file (e.g., mammoth_table_columns.py).
+Update the XPath selectors (table_xpath1 and table_xpath2) if necessary to match the structure of your target table.
+Replace the username and password placeholders with your Mammoth.io credentials.
+Run the script from your terminal: python mammoth_table_columns.py

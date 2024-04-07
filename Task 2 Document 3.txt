@@ -1,0 +1,33 @@
+This code effectively demonstrates how to calculate various statistics on a pandas DataFrame:
+
+Data Preparation:
+
+Import pandas: Imports the pandas library, essential for data manipulation and analysis in Python.
+Create a dictionary: Creates a dictionary named data with a key 'value' containing a list of numerical values.
+Create DataFrame: Converts the dictionary data into a pandas DataFrame named df.
+Calculations:
+
+Moving Average:
+
+Defines a window size (window_size = 2). This represents the number of data points used to calculate the average for each moving average value.
+Uses the rolling function on the 'value' column with the specified window size.
+Applies the mean function to calculate the average for each window.
+Stores the result in a new column named 'moving_average'.
+Cumulative Sum:
+
+Uses the cumsum function on the 'value' column.
+The cumsum function calculates the cumulative sum of elements in a pandas Series or column.
+Stores the result in a new column named 'cumulative_sum'.
+Ranking:
+
+Uses the rank function on the 'value' column with the argument ascending=True to get rankings in ascending order (smallest value gets rank 1).
+Stores the result in a new column named 'rank'.
+Percentile (Median):
+
+Uses the rolling function on the 'value' column with a window size of 1 (since percentile is calculated for each data point).
+Applies the quantile function with a quantile of 0.5 to calculate the median for each window.
+Stores the result in a new column named 'median'.
+Printing the DataFrame:
+
+Prints the entire DataFrame df including the original 'value' column and the newly created columns ('moving_average', 'cumulative_sum', 'rank', and 'median').
+This script provides a clear and concise example of using pandas for data analysis. By combining these techniques, you can efficiently calculate various descriptive statistics for your datasets.
